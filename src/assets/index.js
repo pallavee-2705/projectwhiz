@@ -1,2 +1,3 @@
 import headerlogo from './headerlogo.png'
-export{headerlogo}
+import bannerimg from './19871.jpg'
+export{headerlogo , bannerimg}
