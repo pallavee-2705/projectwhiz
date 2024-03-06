@@ -1,2 +1,4 @@
 import Header from "./Header";
-export {Header};
+import Banner from "./Banner";
+import Whyprojectwhiz from "./Whyprojectwhiz";
+export {Header, Banner, Whyprojectwhiz};

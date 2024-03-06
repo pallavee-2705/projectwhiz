@@ -54,7 +54,7 @@ function Header() {
           </li>
   
             <li>
-              <a href="#" className="text-white bg-gradient-to-r from-blue-500 to-blue-800 px-4 py-2 font-semibold rounded-full flex items-center justify-center relative transition-transform transform-gpu hover:-translate-y-1 hover:shadow-lg">
+              <a href="#" className="text-white bg-gradient-to-r from-blue-500 to-blue-800 px-4 py-2 font-semibold rounded-xl flex items-center justify-center relative transition-transform transform-gpu hover:-translate-y-1 hover:shadow-lg">
                 <span>Get Started</span>
                 <span className="ml-2">
                   <FaArrowRight />
