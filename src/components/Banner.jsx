@@ -6,9 +6,9 @@ import { FaArrowRight } from "react-icons/fa";
 function Banner() {
   return (
     // this is the outer most div
-    <div className='px-16  col-span-2 flex'>
+    <div className='px-16  col-span-2 flex bg-slate-50'>
         {/* this is for the left hand side outer div */}
-        <div className='flex flex-col gap-5 w-1/2 items-center px-20 py-24'> 
+        <div className='flex flex-col gap-5 w-1/2 items-center px-20 py-20'> 
             {/* this is for the bold text */}
             <div className=' font-bold text-5xl'>
             Transform the way you manage projects with ProjectWhiz!
@@ -30,7 +30,7 @@ function Banner() {
 
         </div>
         <div className='w-1/2'>
-            <img src= {bannerimg} alt="bannerimg" className='px-12 py-12'/>
+            <img src= {bannerimg} alt="bannerimg" className='px-16 py-10'/>
         </div>
 
     
