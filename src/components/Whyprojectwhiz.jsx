@@ -55,7 +55,7 @@ function Whyprojectwhiz() {
     </div>
 
     {/* third section */}
-    <div className='py-12 grid gap-20 items-center col-span-1 grid-cols-2 px-60'>
+    <div className='py-12 grid gap-20 items-center col-span-1 grid-cols-2 px-64'>
     {/* this is for the text */}
     <div className='bg-slate-100 rounded-3xl px-10 py-12 h-full text-slate-900'>
         <div className='text-4xl font-semibold'>
