@@ -29,7 +29,7 @@ function Footer() {
                     </div>
                     {/* Login */}
                     <div>
-                      <a href='#'>
+                      <a href='/login'>
                       Login
                       </a>
                     </div>
