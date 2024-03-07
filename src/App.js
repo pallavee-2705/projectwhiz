@@ -1,31 +1,35 @@
 import React from 'react';
-import { Home, Dashboard, Blog, Contact, Privacypolicy, About } from './pages';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Home, Dashboard, Blog, Contact, Privacypolicy, About, Login } from './pages';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { Footer, Header } from './components';
 
 function App() {
   return (
     <Router>
-      <Layout>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/blog" element={<Blog />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/privacypolicy" element={<Privacypolicy />} />
-        </Routes>
-      </Layout>
+      <Routes>
+        <Route path="/" element={<Layout><Home /></Layout>} />
+        <Route path="/dashboard" element={<Layout><Dashboard /></Layout>} />
+        <Route path="/blog" element={<Layout><Blog /></Layout>} />
+        <Route path="/about" element={<Layout><About /></Layout>} />
+        <Route path="/contact" element={<Layout><Contact /></Layout>} />
+        <Route path="/privacypolicy" element={<Layout><Privacypolicy /></Layout>} />
+        <Route path="/login" element={<Login />} />
+      </Routes>
     </Router>
   );
 }
 
 function Layout({ children }) {
+  const location = useLocation();
+
+  // Check if the current route is the login page
+  const isLoginPage = location.pathname === '/login';
+
   return (
     <div>
-      <Header />
+      {!isLoginPage && <Header />}
       {children}
-      <Footer />
+      {!isLoginPage && <Footer />}
     </div>
   );
 }
