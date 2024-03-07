@@ -3,7 +3,7 @@ import { headerlogo } from '../assets';
 import { FaArrowRight } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 
-function Header() {
+function Header({ handleGetStarted, handleLogin }) {
   const scrollToWhyProjectWhiz = () => {
     const whyProjectWhizSection = document.getElementById('whyprojectwhiz');
     if (whyProjectWhizSection) {
@@ -64,7 +64,7 @@ function Header() {
               </Link>
           </li>
           <li>
-              <a href="/login" className="text-gray-600 hover:text-gray-900 hover:scale-105">
+              <a href="/login" className="text-gray-600 hover:text-gray-900 hover:scale-105" onClick={handleLogin}>
                 <span className="inline-block transition-transform duration-300 hover:scale-105">
                   Login
                 </span>
@@ -72,7 +72,7 @@ function Header() {
           </li>
   
             <li>
-              <a href="/login" className="text-white bg-gradient-to-r from-blue-500 to-blue-800 px-4 py-2 font-semibold rounded-xl flex items-center justify-center relative transition-transform transform-gpu hover:-translate-y-1 hover:shadow-lg">
+              <a href="/login" className="text-white bg-gradient-to-r from-blue-500 to-blue-800 px-4 py-2 font-semibold rounded-xl flex items-center justify-center relative transition-transform transform-gpu hover:-translate-y-1 hover:shadow-lg" onClick={handleGetStarted}>
                 <span>Get Started</span>
                 <span className="ml-2">
                   <FaArrowRight />

@@ -1,9 +1,21 @@
-import React from 'react';
-import { Home, Dashboard, Blog, Contact, Privacypolicy, About, Login } from './pages';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { Home, Dashboard, Blog, Contact, Privacypolicy, About, Login } from './pages';
 import { Footer, Header } from './components';
 
 function App() {
+  const [isSignUp, setIsSignUp] = useState(true);
+
+  // Event handler for Get Started button in the header
+  const handleGetStarted = () => {
+    setIsSignUp(true); // Set isSignUp to true to display the sign-up form
+  };
+
+  // Event handler for Login button in the header
+  const handleLogin = () => {
+    setIsSignUp(false); // Set isSignUp to false to display the login form
+  };
+
   return (
     <Router>
       <Routes>
@@ -13,7 +25,7 @@ function App() {
         <Route path="/about" element={<Layout><About /></Layout>} />
         <Route path="/contact" element={<Layout><Contact /></Layout>} />
         <Route path="/privacypolicy" element={<Layout><Privacypolicy /></Layout>} />
-        <Route path="/login" element={<Login />} />
+        <Route path="/login" element={<Layout><Login handleGetStarted={handleGetStarted} handleLogin={handleLogin} /></Layout>} />
       </Routes>
     </Router>
   );

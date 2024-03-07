@@ -20,7 +20,7 @@ function Banner() {
             {/* this is for the email get started thingy */}
             <div className="flex gap-4 w-full mt-5">
                 <input type="email" placeholder="Enter your email" className=" border border-gray-300 rounded-xl px-3 py-2 flex-grow" />
-                <a href="#" className="text-white bg-gradient-to-r from-blue-500 to-blue-800 px-4 py-2 font-semibold rounded-xl flex items-center justify-center relative transition-transform transform-gpu hover:-translate-y-1 hover:shadow-lg">
+                <a href="/login" className="text-white bg-gradient-to-r from-blue-500 to-blue-800 px-4 py-2 font-semibold rounded-xl flex items-center justify-center relative transition-transform transform-gpu hover:-translate-y-1 hover:shadow-lg">
                 <span>Get Started</span>
                 <span className="ml-2">
                   <FaArrowRight />
