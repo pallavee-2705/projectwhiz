@@ -1,6 +1,7 @@
 import React from 'react';
 import { footerlogo } from '../assets';
 import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram} from "react-icons/fa";
+import { Link } from 'react-router-dom';
 function Footer() {
   return (
     <div className='bg-blue-950 text-slate-50 px-12'>
@@ -16,15 +17,15 @@ function Footer() {
                 <div className='flex font-light gap-8'>
                     {/* About */}
                     <div>
-                      <a href='#'>
+                      <Link to="/about">
                       About
-                      </a>
+                      </Link>
                     </div>
                     {/* Contact */}
                     <div>
-                      <a href='#'>
+                    <Link to="/contact">
                       Contact
-                      </a>
+                      </Link>
                     </div>
                     {/* Login */}
                     <div>
@@ -43,15 +44,15 @@ function Footer() {
             </div>
             {/* privacy policy */}
             <div>
-            <a href='#'>
-            Privacy policy
-            </a>
+            <Link to="/privacypolicy">
+                          Privacy policy
+            </Link>
             </div>
             {/* terms */}
             <div>
-            <a href='#'>
+            <Link to="/privacypolicy">
             Terms
-            </a>
+            </Link>
             </div>
 
       </div>

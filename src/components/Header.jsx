@@ -1,9 +1,14 @@
 import React from 'react';
 import { headerlogo } from '../assets';
-import { FaArrowRight } from "react-icons/fa";
+import { FaArrowRight, FaUser } from "react-icons/fa";
+import { Link } from 'react-router-dom';
+import { GoogleLogin} from '@react-oauth/google';
+import { GoogleLogout } from 'react-google-login';
+import { useState } from 'react';
 
 
 function Header() {
+  
   return (
     <header className="bg-white shadow-md">
       <div className="container mx-auto px-12">
@@ -22,11 +27,11 @@ function Header() {
                 </a>
               </li>
               <li>
-              <a href="#" className="text-gray-600 hover:text-gray-900 hover:scale-105">
+              <Link to="/blog" className="text-gray-600 hover:text-gray-900 hover:scale-105">
                 <span className="inline-block transition-transform duration-300 hover:scale-105">
                   Blog
                 </span>
-              </a>
+              </Link>
               </li>
               <li>
               <a href="#" className="text-gray-600 hover:text-gray-900 hover:scale-105">
@@ -39,27 +44,41 @@ function Header() {
           </div>
           <ul className="flex items-center space-x-6"> 
           <li>
-              <a href="#" className="text-gray-600 hover:text-gray-900 hover:scale-105">
+              <Link to="/about" className="text-gray-600 hover:text-gray-900 hover:scale-105">
                 <span className="inline-block transition-transform duration-300 hover:scale-105">
-                  Contact
+                  About
                 </span>
-              </a>
+              </Link>
           </li>
           <li>
-              <a href="#" className="text-gray-600 hover:text-gray-900 hover:scale-105">
-                <span className="inline-block transition-transform duration-300 hover:scale-105">
-                  Login
-                </span>
-              </a>
-          </li>
-  
+              {!isAuthenticated ? (
+                <GoogleLogin
+                clientId="YOUR_CLIENT_ID.apps.googleusercontent.com"
+                buttonText="Login"
+                onSuccess={handleLoginSuccess}
+                onFailure={handleLoginFailure}
+                cookiePolicy={'single_host_origin'}
+                isSignedIn={true}
+              />
+              ) : (
+                <GoogleLogout
+                  clientId="907017828098-i1iouhd7u88ad7j4d9ic3selsc5f86us.apps.googleusercontent.com"
+                  buttonText="Logout"
+                  onLogoutSuccess={handleLogout}
+                />
+              )}
+            </li>
             <li>
-              <a href="#" className="text-white bg-gradient-to-r from-blue-500 to-blue-800 px-4 py-2 font-semibold rounded-xl flex items-center justify-center relative transition-transform transform-gpu hover:-translate-y-1 hover:shadow-lg">
-                <span>Get Started</span>
-                <span className="ml-2">
-                  <FaArrowRight />
-                </span>
-              </a>
+              {!isAuthenticated ? (
+                <a href="#" className="text-white bg-gradient-to-r from-blue-500 to-blue-800 px-4 py-2 font-semibold rounded-xl flex items-center justify-center relative transition-transform transform-gpu hover:-translate-y-1 hover:shadow-lg">
+                  <span>Get Started</span>
+                  <span className="ml-2">
+                    <FaArrowRight />
+                  </span>
+                </a>
+              ) : (
+                <span></span>
+              )}
             </li>
 
           </ul>
