@@ -1,69 +1,111 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { headerlogo } from '../assets';
-import { FaArrowRight } from "react-icons/fa";
+import { FaArrowRight, FaBars, FaTimes } from "react-icons/fa";
+import { Link } from 'react-router-dom';
 
+function Header({ handleGetStarted, handleLogin }) {
+  const [isOpen, setIsOpen] = useState(false);
 
-function Header() {
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const scrollToWhyProjectWhiz = () => {
+    const whyProjectWhizSection = document.getElementById('whyprojectwhiz');
+    if (whyProjectWhizSection) {
+      window.scrollTo({
+        top: whyProjectWhizSection.offsetTop,
+        behavior: 'smooth'
+      });
+      setIsOpen(false); // Close the menu after clicking on a link
+    }
+  };
+
+  const scrollToFeatures = () => {
+    const featuresSection = document.getElementById('features');
+    if (featuresSection) {
+      window.scrollTo({
+        top: featuresSection.offsetTop,
+        behavior: 'smooth'
+      });
+      setIsOpen(false); // Close the menu after clicking on a link
+    }
+  };
+
   return (
     <header className="bg-white shadow-md">
-      <div className="container mx-auto px-12">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <nav className="flex items-center justify-between py-4">
-          <div className="flex items-center"> 
-            <a href="/" className="flex items-center">
+          <div className="flex items-center">
+            <Link to="/" className="flex items-center">
               <img src={headerlogo} alt="Logo" className="h-16" />
-             
-            </a>
-            <ul className="flex space-x-6 ml-4"> 
+            </Link>
+          </div>
+          <div className="hidden md:flex md:items-center items-center">
+            <ul className="flex space-x-6 ml-auto items-center">
               <li>
-                <a href="#" className="text-gray-600 hover:text-gray-900 hover:scale-105">
-                <span className="inline-block transition-transform duration-300 hover:scale-105">
+                <a href="#" onClick={scrollToWhyProjectWhiz} className="text-gray-600 hover:text-gray-900 hover:scale-105">
                   Why ProjectWhiz?
-                </span>
                 </a>
               </li>
               <li>
-              <a href="#" className="text-gray-600 hover:text-gray-900 hover:scale-105">
-                <span className="inline-block transition-transform duration-300 hover:scale-105">
+                <Link to="/blog" className="text-gray-600 hover:text-gray-900 hover:scale-105">
                   Blog
-                </span>
-              </a>
+                </Link>
               </li>
               <li>
-              <a href="#" className="text-gray-600 hover:text-gray-900 hover:scale-105">
-                <span className="inline-block transition-transform duration-300 hover:scale-105">
-                  Features
-                </span>
-              </a>
+                <Link to="/about" className="text-gray-600 hover:text-gray-900 hover:scale-105">
+                  About
+                </Link>
+              </li>
+              <li>
+                <a href="/login" className="text-gray-600 hover:text-gray-900 hover:scale-105" onClick={handleLogin}>
+                  Login
+                </a>
+              </li>
+              <li>
+              <a href="/login" className="text-white bg-gradient-to-r from-blue-500 to-blue-800 px-4 py-2 font-semibold rounded-xl flex items-center justify-center relative transition-transform transform-gpu hover:-translate-y-1 hover:shadow-lg">
+                  <span className="flex-shrink-0 max-lg:text-sm">Get Started</span>
+                  <span className="ml-2"><FaArrowRight /></span>
+                </a>
               </li>
             </ul>
           </div>
-          <ul className="flex items-center space-x-6"> 
-          <li>
-              <a href="#" className="text-gray-600 hover:text-gray-900 hover:scale-105">
-                <span className="inline-block transition-transform duration-300 hover:scale-105">
-                  Contact
-                </span>
-              </a>
-          </li>
-          <li>
-              <a href="#" className="text-gray-600 hover:text-gray-900 hover:scale-105">
-                <span className="inline-block transition-transform duration-300 hover:scale-105">
-                  Login
-                </span>
-              </a>
-          </li>
-  
-            <li>
-              <a href="#" className="text-white bg-gradient-to-r from-blue-500 to-blue-800 px-4 py-2 font-semibold rounded-xl flex items-center justify-center relative transition-transform transform-gpu hover:-translate-y-1 hover:shadow-lg">
-                <span>Get Started</span>
-                <span className="ml-2">
-                  <FaArrowRight />
-                </span>
-              </a>
-            </li>
-
-          </ul>
+          <div className="flex md:hidden">
+            <button onClick={toggleMenu} className="text-gray-600 hover:text-gray-900 focus:outline-none">
+              {isOpen ? <FaTimes /> : <FaBars />}
+            </button>
+          </div>
         </nav>
+        <ul className={`flex ${isOpen ? 'flex-col mt-4' : 'hidden md:flex'} md:hidden space-y-2`}>
+          <li>
+            <a href="#" onClick={scrollToWhyProjectWhiz} className="text-gray-600 hover:text-gray-900 hover:scale-105">
+              Why ProjectWhiz?
+            </a>
+          </li>
+          <li>
+            <Link to="/blog" className="text-gray-600 hover:text-gray-900 hover:scale-105">
+              Blog
+            </Link>
+          </li>
+          <li>
+            <Link to="/about" className="text-gray-600 hover:text-gray-900 hover:scale-105">
+              About
+            </Link>
+          </li>
+          <li>
+            <a href="/login" className="text-gray-600 hovexr:text-gray-900 hover:scale-105" onClick={handleLogin}>
+              Login
+            </a>
+          </li>
+          <li>
+          <a href="/login" className="text-white bg-gradient-to-r from-blue-500 to-blue-800 px-4 py-2 font-semibold rounded-xl flex items-center justify-center relative transition-transform transform-gpu hover:-translate-y-1 hover:shadow-lg">
+            <span className="flex-shrink-0 max-md:text-sm">Get Started</span>
+            <span className="ml-2"><FaArrowRight /></span>
+          </a>
+
+          </li>
+        </ul>
       </div>
     </header>
   );
