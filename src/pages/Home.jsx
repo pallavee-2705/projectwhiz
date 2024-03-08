@@ -1,14 +1,14 @@
 import React from 'react'
-import { Header, Banner, Whyprojectwhiz, Footer } from '../components'
+
+import { Banner, Whyprojectwhiz, Features } from '../components'
+
 
 const Home = () => {
     return (
     <div>
-        <Header />
         <Banner />
         <Whyprojectwhiz />
-        <Footer />
-        
+        <Features/>
     </div>
   )
 }
