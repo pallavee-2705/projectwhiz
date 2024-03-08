@@ -64,11 +64,9 @@ function Header({ handleGetStarted, handleLogin }) {
                 </a>
               </li>
               <li>
-                <a href="/login" className="text-white bg-gradient-to-r from-blue-500 to-blue-800 px-4 py-2 font-semibold rounded-xl flex items-center justify-center relative transition-transform transform-gpu hover:-translate-y-1 hover:shadow-lg" onClick={handleGetStarted}>
-                  Get Started
-                  <span className="ml-2">
-                    <FaArrowRight />
-                  </span>
+              <a href="/login" className="text-white bg-gradient-to-r from-blue-500 to-blue-800 px-4 py-2 font-semibold rounded-xl flex items-center justify-center relative transition-transform transform-gpu hover:-translate-y-1 hover:shadow-lg">
+                  <span className="flex-shrink-0 max-lg:text-sm">Get Started</span>
+                  <span className="ml-2"><FaArrowRight /></span>
                 </a>
               </li>
             </ul>
@@ -96,17 +94,16 @@ function Header({ handleGetStarted, handleLogin }) {
             </Link>
           </li>
           <li>
-            <a href="/login" className="text-gray-600 hover:text-gray-900 hover:scale-105" onClick={handleLogin}>
+            <a href="/login" className="text-gray-600 hovexr:text-gray-900 hover:scale-105" onClick={handleLogin}>
               Login
             </a>
           </li>
           <li>
-            <a href="/login" className="text-white bg-gradient-to-r from-blue-500 to-blue-800 px-4 py-2 font-semibold rounded-xl flex items-center justify-center relative transition-transform transform-gpu hover:-translate-y-1 hover:shadow-lg" onClick={handleGetStarted}>
-              Get Started
-              <span className="ml-2">
-                <FaArrowRight />
-              </span>
-            </a>
+          <a href="/login" className="text-white bg-gradient-to-r from-blue-500 to-blue-800 px-4 py-2 font-semibold rounded-xl flex items-center justify-center relative transition-transform transform-gpu hover:-translate-y-1 hover:shadow-lg">
+            <span className="flex-shrink-0 max-md:text-sm">Get Started</span>
+            <span className="ml-2"><FaArrowRight /></span>
+          </a>
+
           </li>
         </ul>
       </div>
