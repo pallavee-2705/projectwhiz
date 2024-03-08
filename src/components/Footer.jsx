@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 function Footer() {
   return (
     <div className='bg-blue-950 text-slate-50 px-12'>
-      <div className='py-4 mt-20 flex justify-between items-center text-slate-50 w-full'>
+      <div className='py-4 mt-10 flex justify-between items-center text-slate-50 w-full'>
             {/* Left side */}
             <div>
               <a href="/" className="cursor-pointer">
