@@ -20,54 +20,72 @@ function Whyprojectwhiz() {
         </g>
     </svg>
 
-    {/* first section */}
-    <div className='py-12 grid gap-20 items-center col-span-1 grid-cols-2 px-60'>
-    {/* this is for the text */}
-    <div className='bg-slate-100 rounded-3xl px-10 py-16 h-full text-slate-900'>
-        <div className='text-4xl font-semibold'>
-        Streamlined Collaboration:
+    <div id='whyprojectwhiz' className="bg-gradient-to-r from-blue-300 to-blue-600">
+        <div className='flex items-center justify-center text-white text-4xl font-bold py-4'>
+            Why ProjectWhiz ?
         </div>
-                <div className='text-justify  mt-6 text-lg'>
-                    ProjectWhiz provides real-time communication channels that allow team members to collaborate instantly. Whether through chat, comments, or notifications, everyone stays connected and informed, reducing delays in decision-making and task execution.
-                </div>
-            </div>
-            {/* this is for the image */}
-            <div>
-                <img src={why1} alt="why1" className='rounded-3xl w-full' />
-            </div>
-    </div>
+      {/* First section */}
+      
+      <div className='max-md:py-8 max-md:px-4 py-12 xl:px-72 lg:px-36 md:px-10'>
 
+        <div className='grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center'>
+          {/* Image */}
+          <div className="max-md:w-full">
+            <img src={why1} alt="why1" className='rounded-3xl w-full' />
+          </div>
+          {/* Text */}
+          <div className='bg-slate-100 rounded-3xl px-10 py-10 max-md:py-10 text-slate-900'>
+            <div className='max-md:text-2xl text-3xl font-semibold mb-4'>
+              Seamless Collaboration:
+            </div>
+            <div className='max-md:text-sm md:text-md text-lg text-justify'>
+            ProjectWhiz provides real-time communication channels that allow team members to collaborate instantly. Whether through chat, comments, or notifications, everyone stays connected and informed, reducing delays in decision-making and task execution. This seamless integration of communication tools ensures that no important information gets lost.    
+            </div>
+          </div>
+        </div>
+      </div>
 
-    {/* second section */}
-    <div className='py-24 grid gap-20 items-center col-span-1 grid-cols-2 px-60'>
-    {/* this is for the text */}
-            <div>
-                <img src={why2} alt="why1" className='rounded-3xl w-full' />
-            </div>
-    <div className='bg-slate-100 rounded-3xl px-10 py-16 h-full text-slate-900'>
-        <div className='text-4xl font-semibold'>
-        Data-Driven Insights:
-        </div>
-                <div className='text-justify  mt-6 text-lg'>
-            From tracking key metrics to visualizing data trends, our platform provides comprehensive analytics dashboards that enable users to make informed decisions quickly. With real-time access to project data, teams can identify areas for improvement, allocate resources effectively, and optimize project workflows, ultimately driving project success.</div>
-            </div>
-            {/* this is for the image */}
-    </div>
+      {/* Second section */}
+      <div className='max-md:py-8 max-md:px-4 py-12 xl:px-72 lg:px-36 md:px-10'>
 
-    {/* third section */}
-    <div className='py-12 grid gap-20 items-center col-span-1 grid-cols-2 px-64'>
-    {/* this is for the text */}
-    <div className='bg-slate-100 rounded-3xl px-10 py-12 h-full text-slate-900'>
-        <div className='text-4xl font-semibold'>
-        Efficient Progress Tracking
-        </div>
-        <div className='text-justify  mt-6 text-lg'>
-        Meeting deadlines is crucial. Our app offers robust tracking features, allowing teams to monitor project progress and task statuses in real-time. Automated alerts keep everyone informed of approaching deadlines, helping teams prioritize tasks and stay on track to achieve project goals.        </div>
-        </div>
-            {/* this is for the image */}
-            <div>
-                <img src={why3} alt="why3" className='rounded-3xl w-full' />
+            <div className='grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center'>
+            {/* Image */}
+            <div className="max-md:w-full">
+            <img src={why2} alt="why2" className='rounded-3xl w-full' />
+          </div>
+          {/* Text */}
+          <div className='bg-slate-100 rounded-3xl px-10 py-10 max-md:py-10 text-slate-900'>
+            <div className='max-md:text-2xl text-3xl font-semibold mb-4'>
+           
+              Data-Driven Insights:
+              </div>
+            <div className='max-md:text-sm md:text-md text-lg text-justify'>
+              From tracking key metrics to visualizing data trends, our platform provides comprehensive analytics dashboards that enable users to make informed decisions quickly. With real-time access to project data, teams can identify areas for improvement, allocate resources effectively, and optimize project workflows, ultimately driving project success.
             </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Third section */}
+      <div className='max-md:py-8 max-md:px-4 py-12 xl:px-72 lg:px-36 md:px-10'>
+
+            <div className='grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center'>
+            {/* Image */}
+            <div className="max-md:w-full">
+            <img src={why3} alt="why3" className='rounded-3xl w-full' />
+          </div>
+          {/* Text */}
+          <div className='bg-slate-100 rounded-3xl px-10 py-10 max-md:py-10 text-slate-900'>
+            <div className='max-md:text-2xl text-3xl font-semibold mb-4'>
+           
+              Efficient Progress Tracking
+              </div>
+            <div className='max-md:text-sm md:text-md text-lg text-justify'>
+              Meeting deadlines is crucial. Our app offers robust tracking features, allowing teams to monitor project progress and task statuses in real-time. Automated alerts keep everyone informed of approaching deadlines, helping teams prioritize tasks and stay on track to achieve project goals.
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <svg viewBox="0 0 1428 174" version="1.1">
